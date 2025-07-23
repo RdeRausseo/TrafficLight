@@ -1,20 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Color = ({ color }) => {
+const Color = ({ color, focus, onClick }) => {
   const styles = {
     borderRadius: "100%",
     backgroundColor: color,
     width: "100px",
     height: "100px",
-    margin: "10PX auto",
+    margin: "10px auto",
   };
 
-  return <div style={styles}></div>;
+  return <div style={{ ...styles, ...focus }} onClick={onClick}></div>;
 };
 
-Color.PropTypes = {
+Color.propTypes = {
   color: PropTypes.string.isRequired,
+  focus: PropTypes.object,
+  onClick: PropTypes.func,
 };
 
 export default Color;
