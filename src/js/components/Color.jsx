@@ -7,6 +7,7 @@ const Color = ({ color }) => {
     backgroundColor: color,
     width: "100px",
     height: "100px",
+    margin: "10PX auto",
   };
 
   return <div style={styles}></div>;

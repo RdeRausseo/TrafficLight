@@ -5,8 +5,8 @@ const palito = () => {
     width: "40px",
     height: "150px",
     backgroundColor: "black",
-    borderRadius: "20%",
-    margin: "20px auto",
+    borderRadius: "2px",
+    margin: "30px auto 0",
   };
 
   return <div style={stylePalito}></div>;
