@@ -10,12 +10,22 @@ import rigoImage from "../../img/rigo-baby.jpg";
 const Home = () => {
   const [focus, setFocus] = useState("Red");
 
+  const changeFocus = (focus) => {
+    switch (focus) {
+      case "Red":
+        return "Yellow";
+      case "Yellow":
+        return "Green";
+      case "Green":
+        return "Red";
+    }
+  };
   const styleFocus = {
     boxShadow: "1px 1px 20px 15px rgb(201, 161, 74)",
   };
 
   return (
-    <>
+    <div className="text-center">
       <Palito />
       <Contenedor>
         <Color
@@ -34,7 +44,13 @@ const Home = () => {
           focus={focus === "Green" ? styleFocus : {}}
         />
       </Contenedor>
-    </>
+      <button
+        onClick={() => setFocus(changeFocus(focus))}
+        className="btn btn-success my-2"
+      >
+        Change Color
+      </button>
+    </div>
   );
 };
 
